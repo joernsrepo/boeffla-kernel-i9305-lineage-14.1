@@ -16,12 +16,6 @@
 #define KMSG_COMPONENT "zram"
 #define pr_fmt(fmt) KMSG_COMPONENT ": " fmt
 
-#ifdef CONFIG_ZRAM_DEBUG
-#define DEBUG
-#endif
-
-#define MAX_COMP_STREAMS	2
-
 #include <linux/module.h>
 #include <linux/kernel.h>
 #include <linux/bio.h>
