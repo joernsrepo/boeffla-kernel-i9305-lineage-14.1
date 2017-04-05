@@ -10,7 +10,7 @@
 # Parameters to be configured manually
 #######################################
 
-BOEFFLA_VERSION="6.0-boeffla-beta2-LOS14.1-i9305"
+BOEFFLA_VERSION="6.0-boeffla-test3-LOS14.1-i9305"
 
 TOOLCHAIN="/home/fabio/arm-eabi-4.8/bin/arm-eabi-"
 ARCHITECTURE=arm
@@ -24,7 +24,7 @@ DTBTOOL_CMD=""
 MODULES_IN_SYSTEM="y"
 OUTPUT_FOLDER=""
 
-DEFCONFIG="boeffled2_i9305_defconfig"
+DEFCONFIG="boeffled4_i9305_defconfig"
 DEFCONFIG_VARIANT=""
 
 KERNEL_NAME="Boeffla-Kernel"
