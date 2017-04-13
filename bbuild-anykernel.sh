@@ -10,7 +10,7 @@
 # Parameters to be configured manually
 #######################################
 
-BOEFFLA_VERSION="6.0-boeffla-test3-LOS14.1-i9305"
+BOEFFLA_VERSION="6.1-boeffla-stratonz-beta2-LOS14.1-i9305"
 
 TOOLCHAIN="/home/fabio/arm-eabi-4.8/bin/arm-eabi-"
 ARCHITECTURE=arm
@@ -24,7 +24,7 @@ DTBTOOL_CMD=""
 MODULES_IN_SYSTEM="y"
 OUTPUT_FOLDER=""
 
-DEFCONFIG="boeffled4_i9305_defconfig"
+DEFCONFIG="stratonz_i9305_defconfig"
 DEFCONFIG_VARIANT=""
 
 KERNEL_NAME="Boeffla-Kernel"
@@ -100,7 +100,7 @@ step0_copy_code()
 
 	# Replace version information in mkcompile_h with the one from x-settings.sh
 	sed "s/\`echo \$LINUX_COMPILE_BY | \$UTS_TRUNCATE\`/$KERNEL_NAME-$BOEFFLA_VERSION-$BOEFFLA_DATE/g" -i $BUILD_PATH/scripts/mkcompile_h
-	sed "s/\`echo \$LINUX_COMPILE_HOST | \$UTS_TRUNCATE\`/andip71/g" -i $BUILD_PATH/scripts/mkcompile_h
+	sed "s/\`echo \$LINUX_COMPILE_HOST | \$UTS_TRUNCATE\`/stratonz/g" -i $BUILD_PATH/scripts/mkcompile_h
 }
 
 step1_make_clean()
@@ -246,7 +246,7 @@ step4_prepare_anykernel()
 	cd $REPACK_PATH
 	KERNELNAME="Flashing $KERNEL_NAME $BOEFFLA_VERSION"
 	sed -i "s;###kernelname###;${KERNELNAME};" META-INF/com/google/android/update-binary;
-	COPYRIGHT="(c) Lord Boeffla (aka andip71), $(date +%Y.%m.%d-%H:%M:%S)"
+	COPYRIGHT="(c) Lord Boeffla (aka andip71) ported by stratonz, $(date +%Y.%m.%d-%H:%M:%S)"
 	sed -i "s;###copyright###;${COPYRIGHT};" META-INF/com/google/android/update-binary;
 }
 
