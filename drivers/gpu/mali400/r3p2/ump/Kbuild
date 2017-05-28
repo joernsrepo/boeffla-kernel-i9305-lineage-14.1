@@ -28,7 +28,11 @@ endif
 UDD_FILE_PREFIX = ../mali/
 
 # Get subversion revision number, fall back to 0000 if no svn info is available
+<<<<<<< HEAD
 SVN_REV := 0000
+=======
+SVN_REV := $(shell ((svnversion | grep -Eqv "exported|Unversioned directory" && echo -n 'Revision: ' && svnversion) || git svn info | sed -e 's/$$$$/M/' | grep '^Revision: ' || echo ${MALI_RELEASE_NAME}) 2>/dev/null | sed -e 's/^Revision: //')
+>>>>>>> 7117fec... fix: r3p2/ump/common/ump_kernel_common.o] Error 1 on Darwin
 
 ccflags-y += -DSVN_REV=$(SVN_REV)
 ccflags-y += -DSVN_REV_STRING=\"$(SVN_REV)\"
