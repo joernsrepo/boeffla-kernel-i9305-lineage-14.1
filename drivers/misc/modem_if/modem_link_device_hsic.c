@@ -31,7 +31,7 @@
 #include <linux/suspend.h>
 #include <linux/version.h>
 
-#include "modem.h"
+#include <linux/platform_data/modem.h>
 #include "modem_prj.h"
 #include "modem_link_device_hsic.h"
 #include "modem_utils.h"
@@ -269,7 +269,7 @@ static void usb_rx_complete(struct urb *urb)
 		switch (pipe_data->format) {
 		case IF_USB_FMT_EP:
 			if (usb_ld->if_usb_is_main) {
-				pr_urb("IPC-RX", urb);
+//				pr_urb("IPC-RX", urb);
 				iod_format = IPC_FMT;
 			} else {
 				iod_format = IPC_BOOT;
@@ -477,13 +477,13 @@ static int _usb_tx_work(struct sk_buff *skb)
 
 	if (!pipe_data)
 		return -ENOENT;
-
+/*
 	if (iod->format == IPC_FMT && usb_ld->if_usb_is_main)
 		pr_skb("IPC-TX", skb);
 
 	if (iod->format == IPC_RAW)
 		mif_debug("TX[RAW]\n");
-
+*/
 	return usb_tx_urb_with_skb(usb_ld->usbdev, skb,	pipe_data);
 }
 
