@@ -10,9 +10,9 @@
 # Parameters to be configured manually
 #######################################
 
-BOEFFLA_VERSION="6.1-boeffla-stratonz-beta8-UBERTC-6.0-LOS14.1-i9305"
+BOEFFLA_VERSION="7.1.2-boeffla-stratonz_beta8-i9305"
 
-TOOLCHAIN="/home/fabio/UBERTC-arm-eabi-6.0/bin/arm-eabi-"
+TOOLCHAIN="/media/rodman01/HDD/rodman01/Android/RR-M/android/system/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin/arm-eabi-"
 ARCHITECTURE=arm
 COMPILER_FLAGS_KERNEL="-mtune=cortex-a9 -fno-diagnostics-show-caret"
 COMPILER_FLAGS_MODULE="-mtune=cortex-a9 -fno-diagnostics-show-caret"
@@ -100,7 +100,7 @@ step0_copy_code()
 
 	# Replace version information in mkcompile_h with the one from x-settings.sh
 	sed "s/\`echo \$LINUX_COMPILE_BY | \$UTS_TRUNCATE\`/$KERNEL_NAME-$BOEFFLA_VERSION-$BOEFFLA_DATE/g" -i $BUILD_PATH/scripts/mkcompile_h
-	sed "s/\`echo \$LINUX_COMPILE_HOST | \$UTS_TRUNCATE\`/stratonz/g" -i $BUILD_PATH/scripts/mkcompile_h
+	sed "s/\`echo \$LINUX_COMPILE_HOST | \$UTS_TRUNCATE\`/rodman01/g" -i $BUILD_PATH/scripts/mkcompile_h
 }
 
 step1_make_clean()
