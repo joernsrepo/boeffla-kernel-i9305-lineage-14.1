@@ -10,7 +10,7 @@
 # Parameters to be configured manually
 #######################################
 
-BOEFFLA_VERSION="6.1-beta1-boeffla-stratonz_beta8-i9305"
+BOEFFLA_VERSION="6.1-beta2-boeffla-stratonz_beta8-i9305"
 
 TOOLCHAIN="/media/rodman01/HDD/rodman01/Android/RR-M/android/system/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin/arm-eabi-"
 ARCHITECTURE=arm
